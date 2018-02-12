@@ -1,6 +1,7 @@
 # Shortener URL application
 
 Web application for shortening url
+Test @ https://cirrz.herokuapp.com/
 
 ## Built With
 
