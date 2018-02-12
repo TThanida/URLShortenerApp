@@ -19,7 +19,7 @@ from shortener.views import HomeCBView, URLRedirectCBView
 
 urlpatterns = [
     path('', HomeCBView.as_view()),
-    re_path('admin/', admin.site.urls),
+    re_path('admin', admin.site.urls),
     # re_path('view-1/(?P<shortcode>[\w-]+){6,15}', cirr_redirect_view),
     re_path('(?P<shortcode>[\w-]+)', URLRedirectCBView.as_view(), name='scode')
 

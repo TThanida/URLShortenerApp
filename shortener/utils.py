@@ -16,3 +16,8 @@ def create_shortcode(instance, size=SHORTCODE_MIN):
 	if qs_exists:
 		return code_generator(size=size)
 	return new_code
+
+def correctURL(url):
+	if not url.startswith('http://'):
+		url = 'http://'+url
+	return url

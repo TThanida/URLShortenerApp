@@ -3,6 +3,7 @@ from django.shortcuts import render, get_object_or_404
 from django.views import View
 from .models import CirrURL
 from .forms import SubmitUrlForm
+from .utils import correctURL
 
 from analytics.models import ClickEvent
 
@@ -26,7 +27,8 @@ class HomeCBView(View):
 		template = 'shortener/home.html'
 
 		if form.is_valid():
-			url = form.cleaned_data.get('url')
+			''' Add http:// to url'''
+			url = correctURL(form.cleaned_data.get('url'))
 			obj, created = CirrURL.objects.get_or_create(url=url)
 			context = {
 				'object': obj,

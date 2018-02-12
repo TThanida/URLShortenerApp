@@ -41,14 +41,8 @@ class CirrURL(models.Model):
 		if self.shortcode is None or self.shortcode == "":
 			self.shortcode = create_shortcode(self)
 
-		''' Add http:// to url'''
-		self.url = self.correctURL(self.url)
 		super(CirrURL, self).save(*args, **kwargs)
 
-	def correctURL(self, url):
-		if not url.startswith('http://'):
-			url = 'http://'+url
-		return url
 
 	# def mysave(self):
 	# 	self.save()
