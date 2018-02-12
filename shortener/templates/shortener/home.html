@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block style %}
+<style>
+body {
+	background-image: url('https://hdwallpaperim.com/wp-content/uploads/2017/08/22/402543-galaxy-space-stars-fire-dark-burning-space_art-748x547.jpg');
+	background-size: cover;
+}
+</style>
+{% endblock style %}
+
+{% block content %}
+<h1 class="cover-heading">{{ title }}</h1>
+<p class="lead">Shorten that URL</p>
+<p class="lead">
+	<div class=''>
+		<form method='POST' action='.'> {% csrf_token %}
+			<!-- <input name='url' type='text' placeholder='Shortener your url here'/> -->
+			{{form.as_p}}
+			<input class='btn btn-primary' type='submit' value='Shorten'/>
+		</form>
+	</div>
+</p>
+
+</body>
+{% endblock content %}
